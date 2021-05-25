@@ -1,0 +1,31 @@
+﻿@model List<Book>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <table style="border:1px solid black; width:100%; border-collapse: collapse">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Author</th>
+        </tr>
+        @foreach (Book book in Model)
+        {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.Name</td>
+                <td>@book.Author</td>
+            </tr>
+        }
+    </table>
+    <form action="Home/Add" method="post">
+        <input name="Name" type="text" placeholder="Name" required/>
+        <br />
+        <input type="text" placeholder="Author" name="Author" required/>
+        <br />
+        <input type="submit" value="Add" />
+    </form>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
