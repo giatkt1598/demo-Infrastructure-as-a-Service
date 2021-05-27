@@ -1,0 +1,8 @@
+version: '1.0'
+
+services:
+  mywebapp:
+    build: .
+    ports:
+      - 80:80
+    restart: always
