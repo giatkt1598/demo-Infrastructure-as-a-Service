@@ -17,6 +17,9 @@ RUN dotnet build "ProjectIaaS.csproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "ProjectIaaS.csproj" -c Release -o /app/publish
 
+RUN dotnet tool install --global dotnet-ef
+RUN dotnet ef database update
+
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .

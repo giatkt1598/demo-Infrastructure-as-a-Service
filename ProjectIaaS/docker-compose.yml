@@ -1,8 +1,28 @@
-version: '2.2'
+version: '3'
 
 services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    # container_name: mssql2019
+    environment:
+      - MSSQL_PID=Developer
+      - SA_PASSWORD=1234@abcd
+      - ACCEPT_EULA=Y
+      - MSSQL_AGENT_ENABLED=true
+    restart: always
+    volumes:
+      - storage_data:/var/opt/mssql
+    ports:
+      - 1433:1433
+    
   mywebapp:
+    # container_name: web
     build: .
+    depends_on:
+      - db
     ports:
       - 10002:80
     restart: always
+volumes: 
+    storage_data:
+        external: false
