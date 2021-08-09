@@ -24,3 +24,4 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 ### [Install SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads?rtc=1)
 ### [Install .NET Core SDK](https://dotnet.microsoft.com/download)
 ### Install Web Hosting: AspNetCoreModuleV2 at [here](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-aspnetcore-2.2.2-windows-hosting-bundle-installer)
+# To be continue...
